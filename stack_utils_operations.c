@@ -61,3 +61,12 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->prev->n = top + rear;
 	pop(stack, line_number);
 }
+/**
+ * nop - does nothing
+ * @stack: the stack
+ * @line_number: the line number
+ */
+void nop(UNUSED stack_t **stack, UNUSED unsigned int line_number)
+{
+
+}
