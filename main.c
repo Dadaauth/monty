@@ -97,12 +97,14 @@ int main(int ac, UNUSED char *av[])
 	stack = NULL;
 	/* note: fp is defined globally */
 	fp = openFile(av[1]);
+	fgets(buffer, BUF_SIZ, fp);
 	for (i = 0; !feof(fp); i++)
 	{
+		processByteCode(buffer, &stack);
 		fseek(fp, 0, SEEK_SET);
 		for (line = 0; line <= i; line++)
 			fgets(buffer, BUF_SIZ, fp);
-		processByteCode(buffer, &stack);
+		fgets(buffer, BUF_SIZ, fp);
 	}
 	fclose(fp);
 	return (0);

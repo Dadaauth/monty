@@ -18,7 +18,6 @@ FILE *openFile(char *filepath)
 	if (fp == NULL)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", filepath);
-		perror("errno");
 		exit(EXIT_FAILURE);
 	}
 	return (fp);
@@ -65,9 +64,11 @@ void clearWhiteSpaceAndTab(char *str)
  */
 bool isStringInt(const char *str)
 {
+	char start = str[0];
+
 	while (*str != '\0')
 	{
-		if (!isdigit(*str))
+		if (!isdigit(*str) && start != '-')
 			return (false);
 		str++;
 	}
