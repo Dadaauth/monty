@@ -62,6 +62,13 @@ void add(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 /**
+ * sub - subtracts the first top element from the second top element
+ * result is stored in the second element,
+ * then the topmost element is removed.
+ * @stack: the stack
+ * @line_number: the line number in the file where the command is found
+ */
+/**
  * nop - does nothing
  * @stack: the stack
  * @line_number: the line number

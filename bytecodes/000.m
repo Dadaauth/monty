@@ -1,9 +1,10 @@
-push 23
-push 43
-pint
-push 1
-push 2
-pop
+push 223
+push 32
 pall
-pop
+nop
+
+nope 2432 <F3><F
+nop nop nop nop
+
+pall
 pall
