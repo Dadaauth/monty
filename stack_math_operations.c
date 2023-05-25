@@ -18,6 +18,8 @@ void add(stack_t **stack, unsigned int line_number)
 	if (nofelem < 2)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		free_mem(stack);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	top = (*stack)->n;
@@ -39,6 +41,8 @@ void sub(stack_t **stack, unsigned int line_number)
 	if (nofelem < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		free_mem(stack);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	top = (*stack)->n;
@@ -59,6 +63,8 @@ void myDiv(stack_t **stack, unsigned int line_number)
 	if (nofelem < 2)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
+		free_mem(stack);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	top = (*stack)->n;
@@ -66,6 +72,8 @@ void myDiv(stack_t **stack, unsigned int line_number)
 	if (top == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
+		free_mem(stack);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->prev->n = rear / top;
@@ -84,6 +92,8 @@ void mul(stack_t **stack, unsigned int line_number)
 	if (nofelem < 2)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		free_mem(stack);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	top = (*stack)->n;
@@ -104,6 +114,8 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (nofelem < 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
+		free_mem(stack);
+		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
 	top = (*stack)->n;
@@ -111,6 +123,8 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (top == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
+		fclose(fp);
+		free_mem(stack);
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->prev->n = rear % top;
