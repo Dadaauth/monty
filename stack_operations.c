@@ -56,7 +56,7 @@ void push(UNUSED stack_t **stack, UNUSED unsigned int line_number)
  * @stack: the stack
  * @line_number: the line number where the command was found
  */
-void pall(UNUSED stack_t **stack, UNUSED unsigned int line_number)
+void pall(stack_t **stack, UNUSED unsigned int line_number)
 {
 	stack_t *tmp = *stack;
 
@@ -65,4 +65,18 @@ void pall(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 		printf("%d\n", tmp->n);
 		tmp = tmp->prev;
 	}
+}
+/**
+ * pint - prints the value at the top of the stack, followed by a new line.
+ * @stack: the stack
+ * @line_number: the line number where the command was found.
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	printf("%d\n", (*stack)->n);
 }

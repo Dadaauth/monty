@@ -39,6 +39,7 @@ int exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 	instruction_t instruction[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 	};
 
 	size = sizeof(instruction) / sizeof(instruction[0]);
