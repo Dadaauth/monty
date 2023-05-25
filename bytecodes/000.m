@@ -3,4 +3,7 @@ push 43
 pint
 push 1
 push 2
+pop
+pall
+pop
 pall
