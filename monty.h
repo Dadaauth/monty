@@ -42,6 +42,7 @@ FILE *openFile(char *filepath);
 void clearWhiteSpaceAndTab(char *str);
 int processByteCode(char *buffer, stack_t **stack);
 bool isStringInt(const char *str);
+void free_mem(stack_t **stack);
 
 
 /* variable declarations */

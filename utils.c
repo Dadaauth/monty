@@ -64,13 +64,28 @@ void clearWhiteSpaceAndTab(char *str)
  */
 bool isStringInt(const char *str)
 {
-	char start = str[0];
-
+	if (*str == '-' || *str == '+')
+		str++;
 	while (*str != '\0')
 	{
-		if (!isdigit(*str) && start != '-')
+		if (!isdigit(*str))
 			return (false);
 		str++;
 	}
 	return (true);
+}
+/**
+ * free_mem - frees the stack memory
+ * @stack: the stack to free;
+ */
+void free_mem(stack_t **stack)
+{
+	stack_t *prev;
+
+	while ((*stack) != NULL)
+	{
+		prev = (*stack)->prev;
+		free(*stack);
+		(*stack) = prev;
+	}
 }
