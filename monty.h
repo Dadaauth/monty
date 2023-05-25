@@ -40,8 +40,10 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
 
 
+int count_stack(stack_t *stack);
 FILE *openFile(char *filepath);
 void clearWhiteSpaceAndTab(char *str);
 int processByteCode(char *buffer, stack_t **stack);
