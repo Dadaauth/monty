@@ -21,6 +21,7 @@ void push(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 	if (newNode == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_mem(stack);
 		exit(EXIT_FAILURE);
 	}
 	/* fp (file pointer) is defined globally */
