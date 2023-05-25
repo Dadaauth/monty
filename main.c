@@ -104,11 +104,7 @@ int main(int ac, UNUSED char *av[])
 		fseek(fp, 0, SEEK_SET);
 		for (line = 0; line <= i; line++)
 			fgets(buffer, BUF_SIZ, fp);
-		if(fgets(buffer, BUF_SIZ, fp) == NULL)
-		{
-			free_mem(&stack);
-			exit(EXIT_SUCCESS);
-		}
+		fgets(buffer, BUF_SIZ, fp);
 	}
 	fclose(fp);
 	free_mem(&stack);
