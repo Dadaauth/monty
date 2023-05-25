@@ -43,6 +43,10 @@ int exec_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"add", add},
+		{"mul", mul},
+		{"div", div},
+		{"sub", sub},
+		{"mod", mod},
 		{"nop", nop},
 	};
 
@@ -77,7 +81,7 @@ int processByteCode(char *buffer, stack_t **stack)
 	clearWhiteSpaceAndTab(opcode);
 
 	/* checks if there is a blank line, do nothing */
-	if (strcmp(opcode, "") == 0)
+	if (strcmp(opcode, "") == 0 || opcode[0] == '#')
 	{
 		line_number++;
 		return (0);
