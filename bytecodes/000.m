@@ -1,18 +1,14 @@
-push 223
-  push 32
-    push 43
-	push 56
-  	push 562
-   push 23
- nop
-
-nop 2432 <F3><F
-nop nop nop nop
-pall
-mul
-pall
-div
-pall
-add
-pall
-pchar
+push 1
+push 2
+push 3
+push 4
+push 0
+push 110
+push 0
+push 108
+push 111
+push 111
+push 104
+push 99
+push 83
+pstr
